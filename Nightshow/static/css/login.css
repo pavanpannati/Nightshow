@@ -1,0 +1,47 @@
+.jumbotron{
+    
+    background-color: rgb(184, 238, 238);
+    opacity:95%;
+    border-radius: 5px;
+    box-shadow: 5px white;
+}
+#body{
+    background-color: black;
+    
+}
+#id_email,#id_password{
+    background: transparent;
+    border:none;
+    outline-width: 0;
+    
+    margin: 10px 0;
+    
+}
+#id_submit{
+    background-color: red;
+    color: white;
+    float: right;
+}
+#id_form{
+    margin: 30px;
+    margin-left: 50px;
+}
+#id_forget,#id_signup{
+    border:none;
+    background: transparent;
+}
+#id_signup{
+    float: right;
+}
+#id_h1{
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    text-transform: uppercase;
+    color: brown;
+    font-weight:bold;
+    text-align: center;
+    letter-spacing: 5px;
+}
+#info{
+    color:red;
+    text-align: center;
+}

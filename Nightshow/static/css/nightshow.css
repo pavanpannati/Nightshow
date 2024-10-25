@@ -1,0 +1,14 @@
+video{
+    aspect-ratio: 16/9;
+    align-items: center;
+}
+
+#id_body{
+    background-color: black;
+
+}
+
+#card1:hover {
+    display: block;
+    transform: scale(1.2);
+}

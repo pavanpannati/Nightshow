@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+{% load static %}
+{% load django_bootstrap5 %}
+<html lang="en">
+    {% block content %}
+    {% if user.is_authenticated %}
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!--swiper css cdn-->
+    <link  rel="stylesheet"  href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"/>
+
+    
+    <link rel="stylesheet" href="{% static 'css/nightshow.css' %}">
+    <link rel="icon" href="{% static 'images/logo-color.png' %}">
+    <script src="{% static 'js/nightshow.js' %}"></script>
+    <title>Nightshow-Indian OTT Step-1 </title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <br><br>
+    <a href="home" class="btn btn-danger">Logout</a>
+</head>
+<body action="{% url 'nightshow' %}" id='id_body'>
+    <div class="container">
+             <div class="swiper">
+                <div class="swiper-wrapper">
+                  
+                {% for image in images %}
+                    {% if image.video %}
+                        <div class="swiper-slide">
+                        <video autoplay muted playsinlile id="video-player" width="100%" height="auto"  >
+                            <source src="{{image.video.url}}" type="video/mp4" id="video-source">
+                            Your browser doesn't support video
+                        </video>
+                        </div>
+                        {% endif %}
+                        {% if image.posters %}
+                            <div class="swiper-slide">
+                                <img src="{{image.posters.url}}"  alt="{{image.title}}" id='image' />
+                            </div>
+                        {% endif %}
+                        
+                    
+                {% endfor %}
+                </div>
+                <div class="swiper-pagination"></div>
+                <div class="swiper-button-prev"></div>
+                <div class="swiper-button-next"></div>
+                <div class="'swiper-scrollbar-drag"></div>
+             </div>
+        <div class="row">                    
+            
+            {% for image in images %}
+                            
+            <div class="col-md-2" id="card1">
+                <div class="card" id='card2'>
+            <img src="{{image.movie.url}}" class="card-img" alt="{{image.title}}" />
+            
+                    </div></div>
+                
+        {% endfor %}  
+                    
+        </div>
+    </div>
+    </div>
+    
+    <!--swiper js cdn-->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+
+</body>
+{% endif %}
+{% endblock %}
+</html>

@@ -1,0 +1,28 @@
+#body{
+    background-color: black;
+}
+#signin,#getstarted{
+    color:whitesmoke;
+    background-color: red;
+}
+
+#night{
+    color: red;
+}
+#text{
+    color:wheat
+}
+
+#id_email{
+    color:white;
+    background-color: black;
+}
+
+.form-label,#id_form{
+    color:white;
+}
+#card1,#card2{
+    margin-top: 10px;
+    border: none;
+    background-color: black;
+}

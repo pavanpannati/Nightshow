@@ -1,7 +1,7 @@
 #import name,email,otp
 from random import randint
 from django.core.mail import send_mail
-import re
+from django.shortcuts import render
 from .models import register
 from django.forms import ValidationError
 from django.core.exceptions import ValidationError

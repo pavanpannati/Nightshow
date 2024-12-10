@@ -1,6 +1,6 @@
 .jumbotron{
     
-    background-color: rgb(184, 238, 238);
+    background-color: #EAF2F8;
     opacity:95%;
     border-radius: 5px;
     box-shadow: 5px white;
@@ -34,9 +34,9 @@
     float: right;
 }
 #id_h1{
-    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    font-family:Arial, Helvetica, sans-serif;
     text-transform: uppercase;
-    color: brown;
+    color: #1B2631;
     font-weight:bold;
     text-align: center;
     letter-spacing: 5px;
@@ -44,4 +44,5 @@
 #info{
     color:red;
     text-align: center;
+    font-style: oblique;
 }

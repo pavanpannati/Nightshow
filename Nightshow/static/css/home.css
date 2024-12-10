@@ -1,9 +1,26 @@
 #body{
     background-color: black;
 }
+.container{
+    position: absolute;
+   
+.row{
+    width: 116.6%;
+}
+
+
 #signin,#getstarted{
     color:whitesmoke;
     background-color: red;
+    float: right;
+}
+#signin{
+    margin-right: -15%;
+}
+#getstarted{
+    float: right;
+    margin-right: 30%;
+    width:fit-content;
 }
 
 #night{
@@ -15,14 +32,48 @@
 
 #id_email{
     color:white;
-    background-color: black;
+    background-color: rgba(0,0,0,0.5);
+    width:70%;
+    
 }
 
 .form-label,#id_form{
     color:white;
 }
-#card1,#card2{
+#card2{
     margin-top: 10px;
     border: none;
     background-color: black;
+    width:calc(100%/6)
 }
+#card3{
+    width: 100%;
+    border:none;   
+}
+
+#getstarted:hover img{
+    transform:scale(2) ;
+} 
+#getstarted:hover{
+    transform:scale(1.05)
+}
+.card-img-overlay{
+    position: absolute;
+    background: rgba(0,0,0,0.25);
+    top: 0px;
+    width:100%;
+    height:auto;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: left;
+    flex-direction: column;
+    text-align: left;
+    transition: opacity 0.3s ease ;
+    border:none;
+}
+#row{
+    display: grid;
+    gap: 10px;
+}
+

@@ -1,73 +1,67 @@
 <!DOCTYPE html>
 {% load static %}
 {% load django_bootstrap5 %}
+{% load crispy_forms_tags %}
+
 <html lang="en">
-    {% block content %}
-    {% if user.is_authenticated %}
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!--swiper css cdn-->
-    <link  rel="stylesheet"  href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"/>
-
-    
-    <link rel="stylesheet" href="{% static 'css/nightshow.css' %}">
-    <link rel="icon" href="{% static 'images/logo-color.png' %}">
-    <script src="{% static 'js/nightshow.js' %}"></script>
-    <title>Nightshow-Indian OTT Step-1 </title>
+    <script src="{% static 'js/home.js' %}"></script>
+    <link rel="stylesheet" href="{% static 'css/home.css' %}">
+    <link rel="icon" href="{% static 'images\logo-color.png' %}" sizes="16*16">
+    <title>Nightshow-OTT Home</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
-    <br><br>
-    <a href="home" class="btn btn-danger">Logout</a>
-</head>
-<body action="{% url 'nightshow' %}" id='id_body'>
-    <div class="container">
-             <div class="swiper">
-                <div class="swiper-wrapper">
-                  
-                {% for image in images %}
-                    {% if image.video %}
-                        <div class="swiper-slide">
-                        <video autoplay muted playsinlile id="video-player" width="100%" height="auto"  >
-                            <source src="{{image.video.url}}" type="video/mp4" id="video-source">
-                            Your browser doesn't support video
-                        </video>
-                        </div>
-                        {% endif %}
-                        {% if image.posters %}
-                            <div class="swiper-slide">
-                                <img src="{{image.posters.url}}"  alt="{{image.title}}" id='image' />
-                            </div>
-                        {% endif %}
-                        
-                    
-                {% endfor %}
-                </div>
-                <div class="swiper-pagination"></div>
-                <div class="swiper-button-prev"></div>
-                <div class="swiper-button-next"></div>
-                <div class="'swiper-scrollbar-drag"></div>
-             </div>
-        <div class="row">                    
-            
-            {% for image in images %}
-                            
-            <div class="col-md-2" id="card1">
-                <div class="card" id='card2'>
-            <img src="{{image.movie.url}}" class="card-img" alt="{{image.title}}" />
-            
-                    </div></div>
-                
-        {% endfor %}  
-                    
-        </div>
-    </div>
-    </div>
+    <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
     
-    <!--swiper js cdn-->
+</head>
+<body id="body"> 
+    <div class="container">
+        <div class="fixed-box">
+            <header>
+                <img src="{% static 'images\logo-no-background.png' %}" alt="No-image" height=50px>
+                <a href="{% url 'login' %}" class="btn" id="signin">
+                    <span class="glyphicon glyphicon-user"></span>
+                    Sign-In
+                </a>
+                <br><br>
+            </header>
+        </div>
+        <br><br>
+        <div class="row ">
+            <div class="img-container">
+                <form action="{% url 'home' %}" method='post'>
+                    {% for image in images %}
+                        {% if image.title == 'Munna'%}
+                        {% if image.image %}
+                            <div class="card" id=card3>
+                                <img src="{{image.image.url}}" alt="{{image.image.url}}" id="card-img1" class='card-img'>
+                                <div class="card-img-overlay">
+                                    <h2 id="text">Welcome to <b id="night">NIGHTSHOW.</b></h2>
+                                    <h3 id="text">Unlimited Mysterical,Horror and Thriller zone, Shows and more</h3>
+                                    <h4 id="text">Grab your free Premium today for a month, only for the new user</h4>
+                                    {% csrf_token %}
+                                    {% bootstrap_form form%}
+                                    <button type="submit" class="btn" id="getstarted">
+                                        Next <img src="{% static 'images/chevron-right.svg' %}" alt="">
+                                    </button>
+                                </div>
+                            </div>
+                        {% endif %}{% endif %}
+                    {% endfor %}
+                </form>
+            </div>
+        </div>
+        
+                
+        <div class="row" id="row1">
+            {% for image in images %}                    
+                <div class="card" id='card2' onclick='focus1()'>
+                     <img src="{{image.posters.url}}" class="card-img"  alt="{{image.title}}" />                
+                </div>            
+            {% endfor %}       
+        </div>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
 
 </body>
-{% endif %}
-{% endblock %}
 </html>

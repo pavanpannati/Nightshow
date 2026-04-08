@@ -84,15 +84,12 @@ WSGI_APPLICATION = 'Nightshow.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'Nightshow',
-        'USER':'root',
-        'PASSWORD':'pavan',
-        'HOST':'127.0.0.1',
-        'PORT':'3306',
-        'OPTIONS':{
-            'init_command':"SET sql_mode='STRICT_TRANS_TABLES'",
-        }
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': 'nightshow',
+        'USER': 'postgres',
+        'PASSWORD': os.environ.get('DB_PASSWORD')
+        'HOST': 'localhost',
+        'PORT': '5432',
     }
 }
 
@@ -154,7 +151,7 @@ EMAIL_HOST='smtp.gmail.com'
 EMAIL_PORT=587
 EMAIL_USE_TLS=True     #transport layer security
 EMAIL_HOST_USER='pavanpannati5@gmail.com'
-EMAIL_HOST_PASSWORD=''   #passkey of your mail
+EMAIL_HOST_PASSWORD=os.environ.get('EMAIL_PASS')   #passkey of your mail
 
 AUTH_USER_MODEL='library.register'
 LOGIN_ROOT='nightshow'

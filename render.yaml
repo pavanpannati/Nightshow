@@ -33,7 +33,6 @@ services:
 # Optional managed PostgreSQL database
 databases:
   - name: nightshow-db
-    engine: postgresql
     plan: starter
 
 # Notes:

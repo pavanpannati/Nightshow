@@ -30,7 +30,7 @@ services:
       - key: SOCIAL_AUTH_GOOGLE_OAUTH2_SECRET
         value: "__REPLACE_GOOGLE_SECRET__"
     autoDeploy: true
-    healthCheckPath: "/"
+    healthCheckPath: "/in/"
 
 # Optional managed PostgreSQL database
 databases:

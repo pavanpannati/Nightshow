@@ -1,0 +1,48 @@
+# Render deployment configuration for Nightshow
+# Replace placeholder values with real secrets in Render dashboard or set as Render secrets.
+
+services:
+  - type: web
+    name: nightshow-web
+    env: python
+    plan: starter
+    branch: main
+    buildCommand: |
+      python -m pip install --upgrade pip
+      pip install -r Nightshow/requirements.txt
+      python manage.py collectstatic --noinput
+    startCommand: gunicorn Nightshow.wsgi:application --bind 0.0.0.0:$PORT
+    envVars:
+      - key: SECRET_KEY
+        value: "__REPLACE_WITH_SECRET__"
+      - key: DEBUG
+        value: "False"
+      - key: DJANGO_SETTINGS_MODULE
+        value: "Nightshow.settings"
+      - key: DATABASE_URL
+        value: "__REPLACE_WITH_DATABASE_URL__"
+      - key: ALLOWED_HOSTS
+        value: "your-app.onrender.com"
+      - key: PAYTM_MERCHANT_KEY
+        value: "__REPLACE_PAYTM_MERCHANT_KEY__"
+      - key: PAYTM_MID
+        value: "__REPLACE_PAYTM_MID__"
+      - key: SOCIAL_AUTH_GOOGLE_OAUTH2_KEY
+        value: "__REPLACE_GOOGLE_KEY__"
+      - key: SOCIAL_AUTH_GOOGLE_OAUTH2_SECRET
+        value: "__REPLACE_GOOGLE_SECRET__"
+    autoDeploy: true
+    healthCheckPath: "/"
+
+# Optional managed PostgreSQL database
+databases:
+  - name: nightshow-db
+    engine: postgresql
+    plan: starter
+
+# Notes:
+# - Before deploying, set the real SECRET_KEY, DATABASE_URL and other sensitive values using
+#   Render's dashboard Secrets or the `render.yaml` secret reference mechanism.
+# - If you prefer to use a Render Service for the DB, set DATABASE_URL to the connection string
+#   provided by the managed DB and keep the above "databases" block if you want Render to create it.
+# - Adjust build/start commands if you use a different project layout or Docker.

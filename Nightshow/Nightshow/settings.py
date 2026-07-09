@@ -83,14 +83,18 @@ WSGI_APPLICATION = 'Nightshow.wsgi.application'
 # https://docs.djangoproject.com/en/4.2/ref/settings/#databases
 
 DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'nightshow',
-        'USER': 'postgres',
-        'PASSWORD': os.environ.get('DB_PASSWORD'), 
-        'HOST': 'localhost',
-        'PORT': '5432',
-    }
+    "default": dj_database_url.config(
+        default=os.getenv("DATABASE_URL"),
+        conn_max_age=600,
+    )
+    # 'default': {
+    #     'ENGINE': 'django.db.backends.postgresql',
+    #     'NAME': 'nightshow',
+    #     'USER': 'postgres',
+    #     'PASSWORD': os.environ.get('DB_PASSWORD'), 
+    #     'HOST': 'localhost',
+    #     'PORT': '5432',
+    # }
 }
 
 
@@ -150,8 +154,8 @@ EMAIL_BACKEND='django.core.mail.backends.smtp.EmailBackend'
 EMAIL_HOST='smtp.gmail.com'
 EMAIL_PORT=587
 EMAIL_USE_TLS=True     #transport layer security
-EMAIL_HOST_USER='pavanpannati5@gmail.com'
-EMAIL_HOST_PASSWORD=os.environ.get('EMAIL_PASS')   #passkey of your mail
+EMAIL_HOST_USER=os.environ.get('EMAIL_USER')
+EMAIL_HOST_PASSWORD=os.environ.get('EMAIL_PASSWORD')   #passkey of your mail
 
 AUTH_USER_MODEL='library.register'
 LOGIN_ROOT='nightshow'

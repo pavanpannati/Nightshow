@@ -13,6 +13,8 @@ services:
       python Nightshow/manage.py collectstatic --noinput
     startCommand: gunicorn Nightshow.wsgi:application --bind 0.0.0.0:$PORT
     envVars:
+      - key: PYTHON_VERSION
+        value: "3.12.10"
       - key: SECRET_KEY
         value: "__REPLACE_WITH_SECRET__"
       - key: DEBUG

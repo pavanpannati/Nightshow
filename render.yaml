@@ -10,7 +10,7 @@ services:
     buildCommand: |
       python -m pip install --upgrade pip
       pip install -r Nightshow/requirements.txt
-      python manage.py collectstatic --noinput
+      python Nightshow/manage.py collectstatic --noinput
     startCommand: gunicorn Nightshow.wsgi:application --bind 0.0.0.0:$PORT
     envVars:
       - key: SECRET_KEY

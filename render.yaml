@@ -23,10 +23,6 @@ services:
         value: "__REPLACE_WITH_DATABASE_URL__"
       - key: ALLOWED_HOSTS
         value: "your-app.onrender.com"
-      - key: PAYTM_MERCHANT_KEY
-        value: "__REPLACE_PAYTM_MERCHANT_KEY__"
-      - key: PAYTM_MID
-        value: "__REPLACE_PAYTM_MID__"
       - key: SOCIAL_AUTH_GOOGLE_OAUTH2_KEY
         value: "__REPLACE_GOOGLE_KEY__"
       - key: SOCIAL_AUTH_GOOGLE_OAUTH2_SECRET
@@ -46,3 +42,5 @@ databases:
 # - If you prefer to use a Render Service for the DB, set DATABASE_URL to the connection string
 #   provided by the managed DB and keep the above "databases" block if you want Render to create it.
 # - Adjust build/start commands if you use a different project layout or Docker.
+# - Payment-specific environment variables (e.g., Paytm) were removed from this file; add them
+#   back only if you intend to enable payment integrations and set their values via Render secrets.

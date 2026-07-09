@@ -24,7 +24,7 @@ services:
       - key: DATABASE_URL
         value: "__REPLACE_WITH_DATABASE_URL__"
       - key: ALLOWED_HOSTS
-        value: "your-app.onrender.com"
+        value: "nightshow-web.onrender.com"
       - key: SOCIAL_AUTH_GOOGLE_OAUTH2_KEY
         value: "__REPLACE_GOOGLE_KEY__"
       - key: SOCIAL_AUTH_GOOGLE_OAUTH2_SECRET

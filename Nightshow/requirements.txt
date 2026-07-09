@@ -1,4 +1,3 @@
-pip requirements
 asgiref==3.8.1
 certifi==2024.8.30
 cffi==1.17.1

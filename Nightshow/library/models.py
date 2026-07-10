@@ -21,8 +21,8 @@ class login(models.Model):
 
 class movie_posters(models.Model):
     title=CharField(verbose_name='title',max_length=100)
-    movie=FileField(upload_to='movie',max_length=None,null=True,blank=True)
-    image=ImageField(null=True,upload_to='image' )
+    movie=FileField(upload_to='movies',max_length=None,null=True,blank=True)
+    image=ImageField(null=True,upload_to='images')
     posters=ImageField(null=True,upload_to='posters')
     description=CharField(max_length=1000,default='describe')
     year=CharField(max_length=50,default='2024')

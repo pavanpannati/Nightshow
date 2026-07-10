@@ -1,0 +1,596 @@
+/* ============================================
+   MOBILE-FIRST RESPONSIVE DESIGN
+   ============================================ */
+
+/* Reset and Base Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    font-size: 16px;
+}
+
+body {
+    background-color: black;
+    color: white;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+/* ============================================
+   MOBILE STYLES (320px - 576px)
+   ============================================ */
+
+.container {
+    padding: 0 10px;
+    max-width: 100%;
+}
+
+.row {
+    width: 100%;
+    margin: 0;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.8);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+header img {
+    height: 40px;
+    width: auto;
+}
+
+.btn {
+    padding: 8px 16px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 0.9rem;
+    transition: all 0.3s ease;
+}
+
+.btn-danger {
+    background-color: red;
+    color: white;
+}
+
+.btn-danger:hover {
+    background-color: darkred;
+    transform: scale(1.05);
+}
+
+#signin {
+    background-color: red;
+    color: whitesmoke;
+    padding: 8px 12px;
+    font-size: 0.85rem;
+}
+
+#getstarted {
+    background-color: red;
+    color: whitesmoke;
+    margin-top: 15px;
+    width: fit-content;
+    font-size: 0.9rem;
+}
+
+/* Cards - Mobile Responsive */
+.card {
+    border: none;
+    background-color: black;
+    color: white;
+    margin: 10px 0;
+    width: 100%;
+    overflow: hidden;
+    border-radius: 8px;
+}
+
+#card1 {
+    width: 100%;
+}
+
+#card2 {
+    width: 100%;
+}
+
+#card3 {
+    width: 100%;
+}
+
+.card-img,
+.card-video {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+.card-img-overlay,
+.card-video-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.6);
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    padding: 15px;
+    color: white;
+    opacity: 1;
+    transition: opacity 0.3s ease;
+}
+
+.card-video-overlay h3,
+.card-video-overlay p,
+.card-img-overlay h2,
+.card-img-overlay h3,
+.card-img-overlay h4 {
+    margin: 5px 0;
+    font-size: 0.95rem;
+}
+
+#night {
+    color: red;
+}
+
+/* Flex Containers */
+.flex-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 10px;
+    width: 100%;
+}
+
+.flex-container1 {
+    display: flex;
+    gap: 10px;
+    overflow-x: auto;
+    padding: 10px 0;
+    width: 100%;
+}
+
+.img-container {
+    width: 100%;
+}
+
+/* Forms - Mobile Responsive */
+.jumbotron {
+    background-color: #EAF2F8;
+    border-radius: 8px;
+    padding: 20px;
+    margin: 15px 0;
+    opacity: 0.95;
+}
+
+.form-group {
+    width: 100%;
+    margin: 15px 0;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="password"],
+input[type="number"],
+textarea,
+select {
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    border: 2px solid #ccc;
+    border-radius: 5px;
+    background: transparent;
+    color: white;
+    font-size: 1rem;
+}
+
+input[type="text"]::placeholder,
+input[type="email"]::placeholder,
+input[type="password"]::placeholder {
+    color: rgba(255, 255, 255, 0.7);
+}
+
+input[type="submit"],
+button {
+    width: 100%;
+    padding: 12px;
+    margin: 10px 0;
+    background-color: red;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+input[type="submit"]:hover,
+button:hover {
+    background-color: darkred;
+    transform: scale(1.05);
+}
+
+/* OTP Container */
+.otp-container {
+    display: flex;
+    gap: 8px;
+    justify-content: center;
+    flex-wrap: wrap;
+    width: 100%;
+}
+
+.otp-container input {
+    width: 40px;
+    height: 40px;
+    text-align: center;
+    border-radius: 5px;
+    background: none;
+    border: 2px solid gray;
+    color: white;
+}
+
+.otp-container input:focus {
+    border-color: blue;
+    outline: none;
+    background: rgba(0, 0, 255, 0.1);
+}
+
+/* Remove number spinner */
+input[type="number"]::-webkit-outer-spin-button,
+input[type="number"]::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+/* Video Player - Mobile Responsive */
+video {
+    width: 100%;
+    height: auto;
+    max-height: 80vh;
+}
+
+/* Fixed Box */
+.fixed-box {
+    position: sticky;
+    top: 0;
+    background-color: rgba(0, 0, 0, 0.9);
+    z-index: 50;
+    padding: 10px;
+    width: 100%;
+}
+
+/* Headers */
+h1 {
+    font-size: 1.8rem;
+    margin: 15px 0;
+}
+
+h2 {
+    font-size: 1.5rem;
+    margin: 12px 0;
+}
+
+h3 {
+    font-size: 1.2rem;
+    margin: 10px 0;
+}
+
+h4 {
+    font-size: 1rem;
+    margin: 8px 0;
+}
+
+h5 {
+    font-size: 0.9rem;
+}
+
+/* Text Styles */
+#text {
+    color: wheat;
+    font-size: 1rem;
+}
+
+#text1 {
+    color: rgb(11, 143, 136);
+    font-size: 0.95rem;
+}
+
+#title {
+    color: rgb(137, 215, 240);
+}
+
+#info {
+    color: red;
+    text-align: center;
+    font-style: oblique;
+}
+
+/* ============================================
+   TABLET STYLES (576px - 992px)
+   ============================================ */
+
+@media (min-width: 576px) {
+    .container {
+        max-width: 540px;
+        margin: 0 auto;
+    }
+
+    .row {
+        width: 100%;
+    }
+
+    header img {
+        height: 45px;
+    }
+
+    .flex-container1 {
+        gap: 15px;
+    }
+
+    #card2 {
+        width: calc(50% - 7.5px);
+    }
+
+    .card-img-overlay,
+    .card-video-overlay {
+        padding: 20px;
+    }
+
+    .jumbotron {
+        max-width: 500px;
+        margin: 20px auto;
+        padding: 30px;
+    }
+
+    input[type="submit"],
+    button {
+        width: auto;
+        padding: 10px 30px;
+    }
+
+    h1 {
+        font-size: 2rem;
+    }
+
+    h2 {
+        font-size: 1.6rem;
+    }
+
+    h3 {
+        font-size: 1.3rem;
+    }
+}
+
+/* ============================================
+   DESKTOP STYLES (992px+)
+   ============================================ */
+
+@media (min-width: 992px) {
+    .container {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 0 20px;
+    }
+
+    header {
+        padding: 15px 20px;
+    }
+
+    header img {
+        height: 50px;
+    }
+
+    .row {
+        width: 100%;
+        margin: 0;
+    }
+
+    .col-md-2 {
+        flex: 0 0 calc(16.66% - 12px);
+    }
+
+    .col-md-5 {
+        flex: 0 0 41.66%;
+    }
+
+    .col-md-8 {
+        flex: 0 0 66.66%;
+    }
+
+    #card2 {
+        width: calc(16.66% - 8.33px);
+    }
+
+    #signin {
+        margin-right: 0;
+    }
+
+    #getstarted {
+        margin-right: 50px;
+        width: fit-content;
+    }
+
+    .flex-container {
+        flex-direction: row;
+        justify-content: center;
+    }
+
+    .flex-container1 {
+        gap: 20px;
+        overflow-x: auto;
+    }
+
+    .card {
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .card:hover {
+        transform: scale(1.05);
+        box-shadow: 0 8px 16px rgba(255, 0, 0, 0.3);
+    }
+
+    #card2:hover .card-video-overlay {
+        opacity: 0.8;
+    }
+
+    .jumbotron {
+        max-width: 600px;
+        margin: 30px auto;
+        padding: 40px;
+    }
+
+    .form-group {
+        margin: 20px 0;
+    }
+
+    input[type="text"],
+    input[type="email"],
+    input[type="password"],
+    textarea,
+    select {
+        padding: 12px;
+        font-size: 1rem;
+    }
+
+    h1 {
+        font-size: 2.5rem;
+    }
+
+    h2 {
+        font-size: 2rem;
+    }
+
+    h3 {
+        font-size: 1.5rem;
+    }
+
+    /* Offset columns */
+    .offset-md-3 {
+        margin-left: 25%;
+    }
+
+    /* Bootstrap grid columns */
+    .col-md-1 {
+        flex: 0 0 8.33%;
+    }
+
+    .col-md-3 {
+        flex: 0 0 25%;
+    }
+
+    .col-md-4 {
+        flex: 0 0 33.33%;
+    }
+
+    .col-md-6 {
+        flex: 0 0 50%;
+    }
+
+    .col-md-10 {
+        flex: 0 0 83.33%;
+    }
+
+    .col-md-12 {
+        flex: 0 0 100%;
+    }
+}
+
+/* ============================================
+   LARGE DESKTOP STYLES (1200px+)
+   ============================================ */
+
+@media (min-width: 1200px) {
+    .container {
+        max-width: 1400px;
+    }
+
+    #card2 {
+        width: calc(14.28% - 8.5px);
+    }
+
+    .card-img-overlay,
+    .card-video-overlay {
+        padding: 25px;
+    }
+}
+
+/* ============================================
+   UTILITY CLASSES
+   ============================================ */
+
+.text-center {
+    text-align: center;
+}
+
+.text-left {
+    text-align: left;
+}
+
+.mt-1 {
+    margin-top: 8px;
+}
+
+.mt-2 {
+    margin-top: 16px;
+}
+
+.mb-1 {
+    margin-bottom: 8px;
+}
+
+.mb-2 {
+    margin-bottom: 16px;
+}
+
+.px-1 {
+    padding-left: 8px;
+    padding-right: 8px;
+}
+
+.px-2 {
+    padding-left: 16px;
+    padding-right: 16px;
+}
+
+/* ============================================
+   ACCESSIBILITY
+   ============================================ */
+
+@media (prefers-reduced-motion: reduce) {
+    * {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+    }
+}
+
+/* ============================================
+   PRINT STYLES
+   ============================================ */
+
+@media print {
+    body {
+        background-color: white;
+        color: black;
+    }
+
+    .btn,
+    input[type="submit"],
+    button {
+        display: none;
+    }
+}
